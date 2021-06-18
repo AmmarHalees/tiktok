@@ -3,15 +3,22 @@ import myvid from '../../assets/vid1.mp4'
 
 const Post = ({ url }) => {
 
-    const handleOnVideoClick = ({ target: { paused, pause, play } }) => {
+    function handleOnVideoClick({ target: { paused, pause, play } }) {
 
-        // paused ? play() : pause()
+        // if (paused) {
+
+        //     play();
+
+        // } else {
+        //     pause();
+        // }
+
+        return
     }
 
     return (<li className={styles.post}>
 
-        {/* autoPlay */}
-        <video width="320" height="240" onClick={handleOnVideoClick}>
+        <video width="320" height="240" onClick={handleOnVideoClick} autoPlay muted loop>
             <source src={myvid} type="video/mp4" />
         </video>
     </li>
