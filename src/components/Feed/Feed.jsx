@@ -7,7 +7,7 @@ const Feed = () => {
 
             {feedJSON.data.map(({ url, title, id }) => {
 
-                return <Post key={id} url={url} title={title} />
+                return <Post key={id} id={id} url={url} title={title} />
 
             })}
 

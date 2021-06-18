@@ -1,8 +1,10 @@
-import { useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import styles from './Post.module.scss'
 import myvid from '../../assets/vid1.mp4'
 
-const Post = ({ url }) => {
+const Post = ({ url, id }) => {
+
+    const [muted, setMuted] = useState(true);
 
     const myref = useRef();
 
@@ -21,14 +23,18 @@ const Post = ({ url }) => {
             } catch (err) {
             }
         }
-
-
+        setMuted(false)
     }
+    useEffect(() => {
+
+        console.log(myref?.current?.getBoundingClientRect().top)
+
+    }, [myref?.current?.getBoundingClientRect().top])
 
     return (<li className={styles.post}>
         <button onClick={handleOnVideoClick} >
 
-            <video width="320" height="240" autoPlay muted loop preload="metadata" ref={myref}>
+            <video width="320" height="240" autoPlay={id === "2"} muted={muted} loop preload="metadata" ref={myref}>
                 <source src={myvid} type="video/mp4" />
             </video>
         </button>
