@@ -1,16 +1,15 @@
 import Post from '../Post/Post'
 import styles from './Feed.module.scss'
+import feedJSON from '../../data/feed.json'
 const Feed = () => {
     return (
         <ul className={styles.feed}>
 
-            <Post />
-            <Post />
-            <Post />
-            <Post />
-            <Post />
-            <Post />
+            {feedJSON.data.map(({ url, title, id }) => {
 
+                return <Post key={id} url={url} title={title} />
+
+            })}
 
         </ul>);
 }
