@@ -1,26 +1,38 @@
+import { useRef } from 'react';
 import styles from './Post.module.scss'
 import myvid from '../../assets/vid1.mp4'
 
 const Post = ({ url }) => {
 
-    function handleOnVideoClick({ target: { paused, pause, play } }) {
+    const myref = useRef();
 
-        // if (paused) {
+    async function handleOnVideoClick() {
 
-        //     play();
+        if (myref.current.paused) {
+            try {
+                await myref.current.play();
 
-        // } else {
-        //     pause();
-        // }
+            } catch (err) {
+            }
+        } else {
+            try {
+                await myref.current.pause();
 
-        return
+            } catch (err) {
+            }
+        }
+
+
     }
 
     return (<li className={styles.post}>
+        <button onClick={handleOnVideoClick} >
 
-        <video width="320" height="240" onClick={handleOnVideoClick} autoPlay muted loop>
-            <source src={myvid} type="video/mp4" />
-        </video>
+            <video width="320" height="240" autoPlay muted loop preload="metadata" ref={myref}>
+                <source src={myvid} type="video/mp4" />
+            </video>
+        </button>
+
     </li>
     );
 }

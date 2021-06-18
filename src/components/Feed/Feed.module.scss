@@ -4,4 +4,9 @@
     height: 100vh;
     max-width: 500px;
     display: grid;
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
+
 }
