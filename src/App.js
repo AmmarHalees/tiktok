@@ -6,6 +6,14 @@ function App() {
 
       <ul className="list">
         <li className="item">hi</li>
+        <li className="item">hi</li>
+        <li className="item">hi</li>
+        <li className="item">hi</li>
+        <li className="item">hi</li>
+        <li className="item">hi</li>
+        <li className="item">hi</li>
+        <li className="item">hi</li>
+
       </ul>
 
     </div>
