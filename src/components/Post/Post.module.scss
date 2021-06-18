@@ -1,0 +1,14 @@
+.post {
+    scroll-snap-align: end;
+    height: 100%;
+
+}
+
+.post:nth-child(odd) {
+    background-color: red;
+}
+
+
+.post:nth-child(even) {
+    background-color: green;
+}

@@ -1,20 +1,11 @@
 import './App.css';
+import Feed from './components/Feed/Feed';
 
 function App() {
   return (
     <div className="App">
 
-      <ul className="list">
-        <li className="item">hi</li>
-        <li className="item">hi</li>
-        <li className="item">hi</li>
-        <li className="item">hi</li>
-        <li className="item">hi</li>
-        <li className="item">hi</li>
-        <li className="item">hi</li>
-        <li className="item">hi</li>
-
-      </ul>
+      <Feed />
 
     </div>
   );

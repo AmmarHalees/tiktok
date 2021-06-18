@@ -1,0 +1,6 @@
+.feed {
+    overflow-y: auto;
+    scroll-snap-type: y mandatory;
+    height: 100vh;
+    max-width: 500px;
+}
